@@ -1,0 +1,39 @@
+<div class="register-container">
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="register-box">
+    <h2>Cadastro de Usuário</h2>
+
+    <div class="form-group">
+      <label for="name">Nome</label>
+      <input id="name" type="text" formControlName="name" required class="form-input" placeholder="Nome Completo" />
+      <div *ngIf="registerForm.get('name')?.invalid && validar" class="error-message">
+        <small>Nome é obrigatório.</small>
+      </div>
+    </div>
+
+    <div class="form-group">
+        <label for="name">Matrícula</label>
+        <input id="matricula" type="text" required class="form-input" placeholder="Matrícula"/>
+        <div *ngIf="registerForm.get('matricula')?.invalid && validar" class="error-message">
+          <small>Matrícula é obrigatória.</small>
+        </div>
+      </div>
+
+    <div class="form-group">
+      <label for="email">E-mail</label>
+      <input id="email" type="email" formControlName="email" required class="form-input" placeholder="Ex: joao.vitor@academico.ifpb.edu.br"/>
+      <div *ngIf="registerForm.get('email')?.invalid && validar" class="error-message">
+        <small>Email é obrigatório e deve ser válido.</small>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Senha</label>
+      <input id="password" type="password" formControlName="password" required class="form-input" placeholder="Senha"/>
+      <div *ngIf="registerForm.get('password')?.invalid && validar" class="error-message">
+        <small>Senha é obrigatória e deve ter pelo menos 6 caracteres.</small>
+      </div>
+    </div>
+
+    <button type="submit" class="btn-submit">Cadastrar</button>
+  </form>
+</div>
