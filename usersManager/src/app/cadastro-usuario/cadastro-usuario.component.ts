@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms'; 
 import { CommonModule } from '@angular/common';
+import { User } from '../shared/models/User';
+import { UserService } from '../shared/services/user.service';
+
 
 @Component({
   selector: 'app-register',
@@ -13,20 +16,33 @@ import { CommonModule } from '@angular/common';
 export class CadastroUsuarioComponent {
   registerForm: FormGroup;
   validar: boolean = false;
+  usuario: User = new User();
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private userService: UserService) {
     this.registerForm = this.fb.group({
-      name: ['', [Validators.required]],
-      matricula : ['', [Validators.required]],
+      nome: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]]
+      telefone: ['', [Validators.required]],
+      senha: ['', [Validators.required, Validators.minLength(6)]]
     });
   }
 
   onSubmit() {
     this.validar = true;
     if (this.registerForm.valid) {
-      console.log('Usuário cadastrado:', this.registerForm.value);
+      this.usuario = this.registerForm.value;
+      this.usuario.id = '1'; // O ID é gerado automaticamente pelo backend
+      console.log('Dados do formulário:', this.usuario);
+      this.userService.registerUser(this.usuario).subscribe({
+        next: () => {
+          console.log('Usuário cadastrado com sucesso:', this.usuario);
+          // Lógica após cadastro bem-sucedido (e.g., redirecionar para a tela de login)
+        },
+        error: (err) => {
+          console.error('Erro no cadastro:', err);
+          // Exibir mensagem de erro
+        }
+    });
     }
   }
 }
