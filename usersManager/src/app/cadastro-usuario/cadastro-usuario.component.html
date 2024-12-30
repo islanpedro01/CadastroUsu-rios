@@ -4,7 +4,7 @@
 
     
     <div class="form-group">
-      <label for="name">Nome</label>
+      <label for="nome">Nome</label>
       <input id="nome" type="text" formControlName="nome" required class="form-input" placeholder="Nome Completo" />
       <div *ngIf="registerForm.get('name')?.invalid && validar" class="error-message">
         <small>Nome é obrigatório.</small>
@@ -28,8 +28,8 @@
     </div>
 
     <div class="form-group">
-      <label for="password">Senha</label>
-      <input id="password" type="password" formControlName="senha" required class="form-input" placeholder="Senha"/>
+      <label for="senha">Senha</label>
+      <input id="senha" type="password" formControlName="senha" required class="form-input" placeholder="Senha"/>
       <div *ngIf="registerForm.get('password')?.invalid && validar" class="error-message">
         <small>Senha é obrigatória e deve ter pelo menos 6 caracteres.</small>
       </div>
