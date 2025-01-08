@@ -31,7 +31,6 @@ export class CadastroUsuarioComponent {
     this.validar = true;
     if (this.registerForm.valid) {
       this.usuario = this.registerForm.value;
-      this.usuario.id = '1'; // O ID é gerado automaticamente pelo backend
       console.log('Dados do formulário:', this.usuario);
       this.userService.registerUser(this.usuario).subscribe({
         next: () => {

@@ -31,16 +31,17 @@ export class TelaLoginComponent {
     this.validar = true;
     if (this.loginForm.valid) {
       const credentials = this.loginForm.value;
-      this.userService.loginUser(credentials).subscribe(
-        (response) => {
-          console.log('Login realizado:', response);
+      this.userService.loginUser(credentials).subscribe({
+        next: () => {
+          console.log('Login realizado:', credentials);
           // Lógica após login bem-sucedido (e.g., redirecionar para página principal)
         },
-        (error) => {
-          console.error('Erro no login:', error);
+        error: (err) => {
+          console.error('Erro no login:', err);
           // Exibir mensagem de erro
         }     
-      );
+    });
+  
   }
   }
 
