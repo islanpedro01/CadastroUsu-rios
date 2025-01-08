@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms'; 
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { UserService } from '../shared/services/user.service';
 
 
@@ -19,7 +19,7 @@ export class TelaLoginComponent {
   validar: boolean = false;
   
 
-  constructor(private fb: FormBuilder, private userService: UserService) {
+  constructor(private fb: FormBuilder, private userService: UserService, private roteador: Router) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required]]
@@ -27,22 +27,19 @@ export class TelaLoginComponent {
 
   }
 
-  onSubmit() {
+  async onSubmit() {
     this.validar = true;
+    try{
     if (this.loginForm.valid) {
       const credentials = this.loginForm.value;
-      this.userService.loginUser(credentials).subscribe({
-        next: () => {
-          console.log('Login realizado:', credentials);
-          // Lógica após login bem-sucedido (e.g., redirecionar para página principal)
-        },
-        error: (err) => {
-          console.error('Erro no login:', err);
-          // Exibir mensagem de erro
-        }     
-    });
+      await this.userService.validarLogin(credentials.email, credentials.password);
+      this.roteador.navigate(['/listagem-usuario']);    
+    }
+  }catch(err){
+      console.error('Erro no login:', err);
+    }
   
   }
-  }
+  
 
 }

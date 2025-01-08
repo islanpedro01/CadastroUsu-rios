@@ -1,0 +1,5 @@
+<div class="listagem">
+    @for (u of users; track $index) {
+    <app-card-usuario (userRemoved)="excluir($event)" [user]="u"></app-card-usuario>
+    }
+</div>

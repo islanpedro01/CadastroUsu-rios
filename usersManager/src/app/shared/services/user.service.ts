@@ -19,9 +19,40 @@ export class UserService {
     });
   }
 
-
-  // Método para realizar login
-  loginUser(credentials: User): Observable<User> {
-    return this.http.post<User>(`${this.apiUrl}/login`, credentials);
+  buscarUsuarioPorEmail(email: string): Observable<User> {
+    return this.http.get<User>(`${this.apiUrl}/${email}`);
   }
+
+  listarUsuarios(): Observable<User[]> {
+    return this.http.get<User[]>(`${this.apiUrl}`);
+  }
+
+
+  remover(usuario: User): Observable<User>{
+    return this.http.delete<User>(`${this.apiUrl}/${usuario.id}`)
+  }
+
+  validarLogin(email: string, password: string) {
+    return new Promise<void>((resolve, reject) => {
+    this.buscarUsuarioPorEmail(email).subscribe({
+        next: usuario => {
+            if (usuario.senha == password) {
+                resolve ();
+               
+                
+            }
+            else{
+                reject( new Error('Usuário ou senha inválidos'));
+                
+            }        
+        },
+        error: () => {
+            reject(new Error('Usuário ou senha inválidos'));
+        }
+    
+    });
+    });
+  
+}
+
 }

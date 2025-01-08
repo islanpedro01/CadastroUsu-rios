@@ -1,0 +1,12 @@
+
+<span href="#" class="block max-w-sm p-6 m-1 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+
+    <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">Nome: {{ user.nome }} </h5>
+    <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">E-mail: {{ user.email }} </h5>
+    <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">Tel: {{ user.telefone }} </h5>
+    <div class ="icons flex justify-end gap-4 text-lg">
+   <button><i class="fa-solid fa-pencil text-white"></i></button>
+   <button (click)='excluir(user)'><i class="fa-solid fa-trash text-white"></i></button> 
+</div>
+</span>
+    
