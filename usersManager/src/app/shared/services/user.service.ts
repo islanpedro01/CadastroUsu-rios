@@ -23,6 +23,10 @@ export class UserService {
     return this.http.get<User>(`${this.apiUrl}/${email}`);
   }
 
+  buscarUsuarioPorOrcid(orcid: string): Observable<User> {
+    return this.http.get<User>(`${this.apiUrl}/${orcid}`);
+  }
+
   listarUsuarios(): Observable<User[]> {
     return this.http.get<User[]>(`${this.apiUrl}`);
   }

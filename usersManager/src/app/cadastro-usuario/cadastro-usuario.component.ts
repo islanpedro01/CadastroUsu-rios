@@ -24,6 +24,7 @@ export class CadastroUsuarioComponent {
     this.registerForm = this.fb.group({
       nome: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
+      orcid: ['', [Validators.required]],
       telefone: ['', [Validators.required]],
       senha: ['', [Validators.required, Validators.minLength(6)]]
     });

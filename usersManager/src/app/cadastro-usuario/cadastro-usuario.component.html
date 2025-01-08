@@ -19,6 +19,14 @@
         </div>
       </div>
 
+      <div class="form-group">
+        <label for="orcid">Orcid</label>
+        <input id="orcid" type="email" formControlName="orcid" required class="form-input" placeholder="Ex: joao.vitor@academico.ifpb.edu.br"/>
+        <div *ngIf="registerForm.get('orcid')?.invalid && validar" class="error-message">
+          <small>Orcid é obrigatório.</small>
+        </div>
+      </div>
+
     <div class="form-group">
       <label for="email">E-mail</label>
       <input id="email" type="email" formControlName="email" required class="form-input" placeholder="Ex: joao.vitor@academico.ifpb.edu.br"/>
