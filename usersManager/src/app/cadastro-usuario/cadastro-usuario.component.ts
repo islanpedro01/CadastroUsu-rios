@@ -34,7 +34,6 @@ export class CadastroUsuarioComponent {
     this.validar = true;
     if (this.registerForm.valid) {
       this.usuario = this.registerForm.value;
-      console.log('Dados do formulário:', this.usuario);
       this.userService.registerUser(this.usuario).subscribe({
         next: () => {
           this.sweetAlert.sucesso('Usuário cadastrado com sucesso!');

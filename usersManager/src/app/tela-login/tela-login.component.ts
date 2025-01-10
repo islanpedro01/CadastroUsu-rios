@@ -4,6 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
 import { UserService } from '../shared/services/user.service';
+import { SweetAlertService } from '../shared/services/sweet-alert.service';
 
 
 
@@ -19,7 +20,7 @@ export class TelaLoginComponent {
   validar: boolean = false;
   
 
-  constructor(private fb: FormBuilder, private userService: UserService, private roteador: Router) {
+  constructor(private fb: FormBuilder, private userService: UserService, private roteador: Router, private sweetAlert: SweetAlertService) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required]]
@@ -37,6 +38,8 @@ export class TelaLoginComponent {
     }
   }catch(err){
       console.error('Erro no login:', err);
+      this.sweetAlert.erro('Usuário ou senha inválidos!');
+
     }
   
   }

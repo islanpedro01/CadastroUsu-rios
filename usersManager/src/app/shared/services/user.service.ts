@@ -13,7 +13,6 @@ export class UserService {
 
   // Método para cadastrar usuário
   registerUser(user: User): Observable<User> {
-    console.log('Enviando dados para o backend:', user);
     return this.http.post<User>(`${this.apiUrl}`, user,{
       headers: { 'Content-Type': 'application/json' } // Garanta que o cabeçalho esteja correto
     });
@@ -24,7 +23,7 @@ export class UserService {
   }
 
   buscarUsuarioPorOrcid(orcid: string): Observable<User> {
-    return this.http.get<User>(`${this.apiUrl}/${orcid}`);
+    return this.http.get<User>(`${this.apiUrl}/orcid/${orcid}`);
   }
 
   listarUsuarios(): Observable<User[]> {
@@ -47,6 +46,7 @@ export class UserService {
             }
             else{
                 reject( new Error('Usuário ou senha inválidos'));
+                
                 
             }        
         },

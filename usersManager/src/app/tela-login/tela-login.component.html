@@ -6,7 +6,7 @@
         <label for="email">E-mail</label>
         <input id="email" type="email" formControlName="email" required class="form-input"/>
         <div *ngIf="loginForm.get('email')?.invalid && validar" class="error-message">
-          <small>Email é obrigatório e deve ser válido.</small>
+          <small>Email é obrigatório.</small>
         </div>
       </div>
   
