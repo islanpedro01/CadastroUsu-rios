@@ -20,6 +20,7 @@ h1 {
 h2 {
   text-align: center;
   color: #4CAF50;
+  font-size: 25px; /* Tamanho maior para o h1 */
   margin-bottom: 20px;
 }
 
@@ -38,6 +39,7 @@ h2 {
 .form-group label {
   font-weight: bold;
   color: #333;
+  text-align: left;
 }
 
 .form-group input {

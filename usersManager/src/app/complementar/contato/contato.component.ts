@@ -1,15 +1,23 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';  // <--- Importa o FormsModule
-import { CommonModule } from '@angular/common';  // Importe o CommonModule
+import { CommonModule } from '@angular/common';  // Importe o CommonModul
+import { Router, RouterModule } from '@angular/router';
+
 
 @Component({
   selector: 'app-feedback',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, RouterModule],
   templateUrl: './contato.component.html',
   styleUrls: ['./contato.component.css']
 })
 export class ContatoComponent {
+
+  constructor(private router: Router) {}
+  
+    navigateTo(route: string) {
+      this.router.navigate([`/projetos/${route}`]);
+    }
   nome: string = '';
   email: string = '';
   mensagem: string = '';

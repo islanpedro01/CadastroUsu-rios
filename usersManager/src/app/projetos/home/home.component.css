@@ -102,3 +102,43 @@ footer {
     margin: 0.3rem 0;
   }
 }
+
+/* Garanta que o body ocupe 100% da altura da página */
+body {
+  display: flex;
+  flex-direction: column; /* Organiza o layout em coluna */
+  min-height: 100vh; /* Garante que o corpo ocupe a altura total da tela */
+  margin: 0; /* Remove qualquer margem padrão */
+}
+
+/* Nav - Fica fixado no topo */
+nav {
+  background-color: var(--secondary-red);
+  padding: 1rem;
+  color: var(--background-white);
+}
+
+/* Main - Preenche o restante da tela */
+main {
+  flex-grow: 1; /* Isso faz o main ocupar o espaço restante */
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Footer - Fica fixado na parte inferior */
+footer {
+  background-color: var(--primary-green);
+  color: var(--background-white);
+  padding: 1rem;
+  text-align: center;
+}
+
+/* A imagem dentro do main */
+main img {
+  width: 600px; /* Tamanho fixo */
+  height: auto; /* Mantém a proporção */
+  display: block;
+  margin: 0 auto; /* Centraliza a imagem */
+  padding: 10px;
+}
+

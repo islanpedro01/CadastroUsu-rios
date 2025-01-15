@@ -15,19 +15,28 @@
     <a routerLink="/contato">Contato</a>
     <a routerLink="/sobre">Sobre</a>
   </nav>
+
   <main>
     <h2>Bem-vindo ao Portal</h2>
     <p>
       Este portal foi desenvolvido para gerenciar e divulgar projetos de pesquisa
       acadêmicos voltados à tecnologia no Instituto Federal da Paraíba (IFPB) e outras instituições.
     </p>
+  
+    <!-- A imagem será exibida apenas quando imagemVisivel for true -->
+    <img *ngIf="imagemVisivel" src="assets/imagens/foto.jpeg" alt="Foto exemplo" class="imagem-pequena">
+  
     <div>
-      <button routerLink="cadastro">Cadastrar Novo Projeto</button>
-      <button routerLink="consulta">Ver Projetos</button>
+      <button routerLink="cadastro" (click)="navigateTo('cadastro')">Cadastrar Novo Projeto</button>
+      <button routerLink="consulta" (click)="navigateTo('consulta')">Ver Projetos</button>
     </div>
-    <!-- Router outlet para carregar as páginas filhas -->
+  
     <router-outlet></router-outlet>
   </main>
+  
+  
+  
+
   <footer>
     <p>Instituto Federal da Paraíba - Desenvolvido em 2025</p>
   </footer>
