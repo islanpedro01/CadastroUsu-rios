@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal de Projetos Acadêmicos</title>
+  <link rel="stylesheet" href="contato.component.css">
+</head>
+<body>
+  <header>
+    <h1>Portal de Projetos Acadêmicos - IFPB</h1>
+  </header>
+  <nav>
+    <a routerLink="/projetos" class="btn">Home</a>
+    <a routerLink="/contato">Contato</a>
+    <a routerLink="/sobre">Sobre</a>
+  </nav>
+  <main>
+    <div class="feedback-container">
+        <h2>Tem alguma dúvida ou sugestão?</h2>
+        <form class="feedback-form" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" [(ngModel)]="nome" placeholder="Seu nome" required>
+          </div>
+      
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" [(ngModel)]="email" placeholder="Seu e-mail" required>
+          </div>
+      
+          <div class="form-group">
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" [(ngModel)]="mensagem" placeholder="Descreva sua dúvida ou sugestão" required></textarea>
+          </div>
+      
+          <button type="submit" class="submit-btn">Enviar</button>
+        </form>
+      </div>
+  </main>
+  <footer>
+    <p>Instituto Federal da Paraíba - Desenvolvido em 2025</p>
+  </footer>
+</body>
+</html>

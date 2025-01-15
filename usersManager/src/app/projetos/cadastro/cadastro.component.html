@@ -1,0 +1,190 @@
+<div class="form-container">
+  <h1>Cadastro de Projetos</h1>
+  <form class="project-form" (ngSubmit)="onSubmit()">
+    <!-- Etapa 1: Dados do Projeto -->
+    <div *ngIf="currentStep === 1" class="form-step" id="step-1">
+      <h2>Informações do Projeto</h2>
+      
+      <div class="form-group">
+        <label for="nomeProjeto">Nome do Projeto:</label>
+        <input type="text" id="nomeProjeto" name="nomeProjeto" [(ngModel)]="nomeProjeto" placeholder="Digite o nome do projeto" required>
+      </div>
+
+      <div class="form-group">
+        <label for="problema">Problema:</label>
+        <input type="text" id="problema" name="problema" [(ngModel)]="problema" placeholder="Descreva o problema" required>
+      </div>
+
+      <div class="form-group">
+        <label for="abordagem">Abordagem:</label>
+        <input type="text" id="abordagem" name="abordagem" [(ngModel)]="abordagem" placeholder="Explique a abordagem" required>
+      </div>
+
+      <div class="form-group">
+        <label for="proposito">Propósito:</label>
+        <input type="text" id="proposito" name="proposito" [(ngModel)]="proposito" placeholder="Defina o propósito" required>
+      </div>
+
+      <div class="form-group">
+        <label for="metodologia">Metodologia:</label>
+        <input type="text" id="metodologia" name="metodologia" [(ngModel)]="metodologia" placeholder="Explique a metodologia" required>
+      </div>
+
+      <div class="form-group">
+        <label for="tema">Tema:</label>
+        <input type="text" id="tema" name="tema" [(ngModel)]="tema" placeholder="Defina o tema" required>
+      </div>
+
+      <div class="form-group">
+        <label for="contexto">Contexto:</label>
+        <input type="text" id="contexto" name="contexto" [(ngModel)]="contexto" placeholder="Descreva o contexto" required>
+      </div>
+
+      <div class="form-group">
+        <label for="autores">Autores:</label>
+        <input type="text" id="autores" name="autores" [(ngModel)]="autores" placeholder="Liste os autores" required>
+      </div>
+
+      <button type="button" class="next-btn" (click)="nextStep()">Avançar</button>
+    </div>
+
+    <!-- Etapa 2: Fase -->
+    <div *ngIf="currentStep === 2" class="form-step" id="step-2">
+      <h2>Fase</h2>
+      <div class="form-group">
+        <label for="tipo">Tipo:</label>
+        <input type="text" id="tipo" name="tipo" [(ngModel)]="tipo" placeholder="Defina o tipo" required>
+      </div>
+      <div class="form-group">
+        <label for="descricao">Descrição:</label>
+        <input type="text" id="descricao" name="descricao" [(ngModel)]="descricao" placeholder="Apresente a descrição da fase" required>
+      </div>
+      <div class="form-group">
+        <label for="data">Data:</label>
+        <input type="date" id="data" name="data" [(ngModel)]="data" required>
+      </div>
+      <button type="button" class="prev-btn" (click)="previousStep()">Voltar</button>
+      <button type="button" class="next-btn" (click)="nextStep()">Avançar</button>
+    </div>
+
+    <!-- Etapa 3: Objetivo -->
+    <div *ngIf="currentStep === 3" class="form-step" id="step-3">
+      <h2>Objetivo</h2>
+      <div class="form-group">
+        <label for="descicao">Descrição:</label>
+        <input type="text" id="descicao" name="descicao" [(ngModel)]="descicao" placeholder="Descreva o objetivo" required>
+      </div>
+      <button type="button" class="prev-btn" (click)="previousStep()">Voltar</button>
+      <button type="button" class="next-btn" (click)="nextStep()">Avançar</button>
+    </div>
+        <!-- Etapa 4: Planejamento -->
+        <div *ngIf="currentStep === 4" class="form-step" id="step-4">
+          <h2>Planejamento</h2>
+          <div class="form-group checkbox-group">
+            <label for="questionario" class="checkbox-label">Possui Questionário?</label>
+            <div class="checkbox-options">
+              <div>
+                <input type="radio" id="simquest" name="questionario" value="sim">
+                <label for="sim" class="checkbox-label">Sim</label>
+              </div>
+              <div>
+                <input type="radio" id="naoquest" name="questionario" value="nao">
+                <label for="nao" class="checkbox-label">Não</label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group checkbox-group">
+            <label for="formulario" class="checkbox-label">Possui Formulário?</label>
+            <div class="checkbox-options">
+              <div>
+                <input type="radio" id="simform" name="formulario" value="sim">
+                <label for="sim" class="checkbox-label">Sim</label>
+              </div>
+              <div>
+                <input type="radio" id="naoform" name="formulario" value="nao">
+                <label for="nao" class="checkbox-label">Não</label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="resumo">Resumo:</label>
+            <input type="text" id="resumo" name="resumo" [(ngModel)]="resumo" placeholder="Descreva o resumo do objetivo" required>
+          </div>
+          <button type="button" class="prev-btn" (click)="previousStep()">Voltar</button>
+          <button type="button" class="next-btn" (click)="nextStep()">Avançar</button>
+        </div>
+    
+        <!-- Etapa 5: Cenário -->
+        <div *ngIf="currentStep === 5" class="form-step" id="step-5">
+          <h2>Cenário</h2>
+          <div class="form-group">
+            <label for="localFigura">Local da Figura Demonstrativa:</label>
+            <input type="text" id="localFigura" name="localFigura" [(ngModel)]="localFigura" placeholder="Informe o local da figura" required>
+          </div>
+          <div class="form-group">
+            <label for="descricaoFigura">Descrição da Figura:</label>
+            <input type="text" id="descricaoFigura" name="descricaoFigura" [(ngModel)]="descricaoFigura" placeholder="Informe a descrição da figura" required>
+          </div>
+          <button type="button" class="prev-btn" (click)="previousStep()">Voltar</button>
+          <button type="button" class="next-btn" (click)="nextStep()">Avançar</button>
+        </div>
+    
+        <!-- Etapa 6: Variáveis -->
+        <div *ngIf="currentStep === 6" class="form-step" id="step-6">
+          <h2>Variáveis</h2>
+          <div class="form-group">
+            <label for="nomeVariavel">Nome da Variável:</label>
+            <input type="text" id="nomeVariavel" name="nomeVariavel" [(ngModel)]="nomeVariavel" placeholder="Informe o nome da variável" required>
+          </div>
+          <div class="form-group">
+            <label for="tipoVariavel">Tipo da Variável:</label>
+            <input type="text" id="tipoVariavel" name="tipoVariavel" [(ngModel)]="tipoVariavel" placeholder="Informe o tipo da variável" required>
+          </div>
+          <div class="form-group">
+            <label for="localVariavel">Local da Variável:</label>
+            <input type="text" id="localVariavel" name="localVariavel" [(ngModel)]="localVariavel" placeholder="Informe o local da variável" required>
+          </div>
+          <button type="button" class="prev-btn" (click)="previousStep()">Voltar</button>
+          <button type="button" class="next-btn" (click)="nextStep()">Avançar</button>
+        </div>
+    
+        <!-- Etapa 7: Parâmetro do Cenário -->
+        <div *ngIf="currentStep === 7" class="form-step" id="step-7">
+          <h2>Parâmetro do Cenário</h2>
+          <div class="form-group">
+            <label for="idCenario">ID do Cenário:</label>
+            <input type="text" id="idCenario" name="idCenario" [(ngModel)]="idCenario" placeholder="Informe o ID do cenário" required>
+          </div>
+          <div class="form-group">
+            <label for="idParametro">ID do Parâmetro:</label>
+            <input type="text" id="idParametro" name="idParametro" [(ngModel)]="idParametro" placeholder="Informe o ID do parâmetro" required>
+          </div>
+          <button type="button" class="prev-btn" (click)="previousStep()">Voltar</button>
+          <button type="button" class="next-btn" (click)="nextStep()">Avançar</button>
+        </div>
+    
+        <!-- Etapa 8: Parâmetro -->
+        <div *ngIf="currentStep === 8" class="form-step" id="step-8">
+          <h2>Parâmetro</h2>
+          <div class="form-group">
+            <label for="tipoParametro">Tipo:</label>
+            <input type="text" id="tipoParametro" name="tipoParametro" [(ngModel)]="tipoParametro" placeholder="Informe o tipo do parâmetro" required>
+          </div>
+          <div class="form-group">
+            <label for="nomeParametro">Nome:</label>
+            <input type="text" id="nomeParametro" name="nomeParametro" [(ngModel)]="nomeParametro" placeholder="Informe o nome do parâmetro" required>
+          </div>
+          <div class="form-group">
+            <label for="descricaoTecnica">Descrição Técnica:</label>
+            <input type="text" id="descricaoTecnica" name="descricaoTecnica" [(ngModel)]="descricaoTecnica" placeholder="Informe a descrição técnica" required>
+          </div>
+          <div class="form-group">
+            <label for="linkDescricao">Link da Descrição Técnica:</label>
+            <input type="text" id="linkDescricao" name="linkDescricao" [(ngModel)]="linkDescricao" placeholder="Informe o link da descrição técnica" required>
+          </div>
+          <button type="button" class="prev-btn" (click)="previousStep()">Voltar</button>
+          <button type="submit" class="submit-btn">Confirmar</button>
+        </div>
+
+  </form>
+</div>

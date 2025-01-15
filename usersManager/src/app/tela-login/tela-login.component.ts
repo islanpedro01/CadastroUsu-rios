@@ -34,7 +34,7 @@ export class TelaLoginComponent {
     if (this.loginForm.valid) {
       const credentials = this.loginForm.value;
       await this.userService.validarLogin(credentials.email, credentials.password);
-      this.roteador.navigate(['/listagem-usuario']);    
+      this.roteador.navigate(['/projetos']);    
     }
   }catch(err){
       console.error('Erro no login:', err);
