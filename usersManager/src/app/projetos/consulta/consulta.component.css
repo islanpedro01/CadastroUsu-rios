@@ -1,0 +1,52 @@
+/* Estilos melhorados */
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 0.9em; /* Tamanho da fonte mais consistente */
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); /* Sombra para dar mais destaque */
+}
+
+.styled-table thead tr {
+    background-color: #008000; /* Cor mais moderna */
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #008000;
+}
+
+.styled-table button {
+    background-color: #008000; /* Cor consistente com o cabeçalho */
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.styled-table button:hover {
+    background-color: #007a5f; /* Cor mais escura ao passar o mouse */
+}

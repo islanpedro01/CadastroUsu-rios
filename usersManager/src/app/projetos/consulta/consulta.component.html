@@ -1,17 +1,155 @@
 <h2>Consulta de Projetos</h2>
-<table>
-  <thead>
-    <tr>
-      <th>Nome</th>
-      <th>Descrição</th>
-      <th>Ações</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Projeto 1</td>
-      <td>Descrição do projeto 1</td>
-      <td><button>Editar</button></td>
-    </tr>
-  </tbody>
+
+<div class="search-container">
+  <input type="text" [(ngModel)]="searchText" placeholder="Pesquisar Projeto..." class="search-input">
+  <button class="search-button">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+      <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+    </svg>
+  </button>
+</div>
+<table class="styled-table">
+    <thead>
+        <tr>
+            <th>Grupo</th>
+            <th>Subgrupo</th>
+            <th>Informação</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td rowspan="7">1. PROJETO</td>
+            <td>NOME</td>
+            <td>Projeto Exemplo</td>
+            <td><button>Editar</button></td>
+        </tr>
+        <tr>
+            <td>PROBLEMA</td>
+            <td>Problema do projeto</td>
+            <td><button>Editar</button></td>
+        </tr>
+        <tr>
+            <td>ABORDAGEM</td>
+            <td>Abordagem utilizada</td>
+            <td><button>Editar</button></td>
+        </tr>
+        <tr>
+            <td>PROPOSITO</td>
+            <td>Propósito do projeto</td>
+            <td><button>Editar</button></td>
+        </tr>
+        <tr>
+            <td>METODOLOGIA</td>
+            <td>Metodologia aplicada</td>
+            <td><button>Editar</button></td>
+        </tr>
+        <tr>
+            <td>TEMA</td>
+            <td>Tema do projeto</td>
+            <td><button>Editar</button></td>
+        </tr>
+        <tr>
+            <td>CONTEXTO</td>
+            <td>Contexto do projeto</td>
+            <td><button>Editar</button></td>
+        </tr>
+        <tr>
+            <td rowspan="3">2. FASE</td>
+            <td>TIPO</td>
+            <td>Tipo de fase</td>
+            <td><button>Editar</button></td>
+        </tr>
+        <tr>
+            <td>DESCRIÇÃO</td>
+            <td>Descrição da fase</td>
+            <td><button>Editar</button></td>
+        </tr>
+        <tr>
+            <td>DATA</td>
+            <td>Data da fase</td>
+            <td><button>Editar</button></td>
+        </tr>
+        <tr>
+            <td rowspan="2">3. OBJETIVO</td>
+            <td>DESCRIÇÃO</td>
+            <td>Descrição do objetivo</td>
+            <td><button>Editar</button></td>
+        </tr>
+        <tr>
+          <td>QUESTIONARIO</td>
+          <td>Link para o questionário</td>
+          <td><button>Editar</button></td>
+        </tr>
+        <tr>
+            <td rowspan="3">4. PLANEJAMENTO</td>
+            <td>FORMULÁRIO</td>
+            <td>Link para o formulário</td>
+            <td><button>Editar</button></td>
+        </tr>
+        <tr>
+            <td>RESUMO</td>
+            <td>Resumo do planejamento</td>
+            <td><button>Editar</button></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+            <td rowspan="2">5. CENÁRIO</td>
+            <td>LOCAL DA FIGURA</td>
+            <td>Local da imagem</td>
+            <td><button>Editar</button></td>
+        </tr>
+        <tr>
+            <td>DESCRIÇÃO DA FIGURA</td>
+            <td>Descrição da imagem</td>
+            <td><button>Editar</button></td>
+        </tr>
+        <tr>
+            <td rowspan="2">6. VARIÁVEIS</td>
+            <td>NOME DA VARIÁVEL</td>
+            <td>Nome da variável</td>
+            <td><button>Editar</button></td>
+        </tr>
+        <tr>
+            <td>TIPO DA VARIÁVEL</td>
+            <td>Tipo da variável</td>
+            <td><button>Editar</button></td>
+        </tr>
+        <tr>
+            <td rowspan="2">7. PARÂMETROS DO CENÁRIO</td>
+            <td>ID DO CENÁRIO</td>
+            <td>ID único do cenário</td>
+            <td><button>Editar</button></td>
+        </tr>
+         <tr>
+            <td>ID DO PARÂMETRO</td>
+            <td>ID do parâmetro</td>
+            <td><button>Editar</button></td>
+        </tr>
+        <tr>
+            <td rowspan="4">8. PARÂMETRO</td>
+            <td>TIPO</td>
+            <td>Tipo do parâmetro</td>
+            <td><button>Editar</button></td>
+        </tr>
+        <tr>
+            <td>NOME</td>
+            <td>Nome do parâmetro</td>
+            <td><button>Editar</button></td>
+        </tr>
+        <tr>
+            <td>DESCRIÇÃO TÉCNICA</td>
+            <td>Descrição técnica</td>
+            <td><button>Editar</button></td>
+        </tr>
+        <tr>
+            <td>LINK DA DESCRIÇÃO</td>
+            <td>Link para a descrição técnica</td>
+            <td><button>Editar</button></td>
+        </tr>
+    </tbody>
 </table>
